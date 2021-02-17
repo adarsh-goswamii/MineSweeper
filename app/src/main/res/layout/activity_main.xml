@@ -21,11 +21,16 @@
         android:id="@+id/text_connect"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_connect"
         android:id="@+id/relative_image_buttons"
+        android:layout_centerHorizontal="true"
+        >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
         <soup.neumorphism.NeumorphImageButton
@@ -62,6 +67,7 @@
             />
 
     </LinearLayout>
+    </RelativeLayout>
 
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
@@ -131,6 +137,7 @@
                 app:neumorph_shadowColorDark="@color/blueshadow"
                 android:layout_toRightOf="@id/card_image_easy"
                 app:neumorph_shadowColorLight="@color/bluelight"
+                android:id="@+id/btn_easy_play"
                 />
 
         </RelativeLayout>
@@ -205,6 +212,7 @@
                 app:neumorph_shadowColorDark="@color/yellowshadow"
                 android:layout_toRightOf="@id/card_image_medium"
                 app:neumorph_shadowColorLight="@color/yellowlight"
+                android:id="@+id/btn_medium_play"
                 />
 
         </RelativeLayout>
@@ -279,6 +287,7 @@
                 android:layout_toRightOf="@id/card_image_hard"
                 app:neumorph_shadowColorDark="@color/redshadow"
                 app:neumorph_shadowColorLight="@color/redlight"
+                android:id="@+id/btn_hard_play"
                 />
 
         </RelativeLayout>
