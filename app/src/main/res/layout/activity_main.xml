@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/card_easy"
+        android:layout_marginRight="10dp"
+        android:background="@color/yellow"
+        android:layout_marginTop="50dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#05346B"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/easy"
+            android:id="@+id/card_image_easy"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EASY"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:fontFamily="@font/butcherman"
+            android:layout_marginTop="5dp"
+            android:id="@+id/text_easy"
+            android:layout_toRightOf="@+id/card_image_easy"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="0 Wins"
+                android:fontFamily="@font/butcherman"
+                android:id="@+id/text_easy_win"
+                android:layout_toRightOf="@id/card_image_easy"
+                android:layout_below="@+id/text_easy"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="0 loss"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_easy"
+                android:layout_below="@+id/text_easy_win"
+                android:id="@+id/text_easy_loss"
+                />
+
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_easy_loss"
+                android:text="PLAY"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_easy"
+                />
+
+        </RelativeLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/yellow"
+        android:id="@+id/card_medium"
+        android:layout_below="@+id/card_easy"
+        android:layout_marginTop="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/yellow"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/medium_size"
+                android:id="@+id/card_image_medium"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEDIUM"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="@font/butcherman"
+                android:layout_marginTop="5dp"
+                android:id="@+id/text_medium"
+                android:layout_toRightOf="@+id/card_image_medium"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="0 Wins"
+                android:fontFamily="@font/butcherman"
+                android:id="@+id/text_medium_win"
+                android:layout_toRightOf="@id/card_image_medium"
+                android:layout_below="@+id/text_medium"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="0 loss"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_medium"
+                android:layout_below="@+id/text_medium_win"
+                android:id="@+id/text_medium_loss"
+                />
+
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_medium_loss"
+                android:text="PLAY"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_medium"
+                />
+
+        </RelativeLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/yellow"
+        android:layout_marginTop="10dp"
+        android:id="@+id/card_hard"
+        android:layout_below="@+id/card_medium"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#D7386A"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:src="@drawable/hard2"
+                android:id="@+id/card_image_hard"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HARD"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="@font/butcherman"
+                android:layout_marginTop="5dp"
+                android:id="@+id/text_hard"
+                android:layout_toRightOf="@+id/card_image_hard"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="0 Wins"
+                android:fontFamily="@font/butcherman"
+                android:id="@+id/text_hard_win"
+                android:layout_toRightOf="@id/card_image_hard"
+                android:layout_below="@+id/text_hard"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="0 loss"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_hard"
+                android:layout_below="@+id/text_hard_win"
+                android:id="@+id/text_hard_loss"
+                />
+
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_hard_loss"
+                android:text="PLAY"
+                android:fontFamily="@font/butcherman"
+                android:layout_toRightOf="@id/card_image_hard"
+                />
+
+        </RelativeLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+
+
+
+
+
+</RelativeLayout>
