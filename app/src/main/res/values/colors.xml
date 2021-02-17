@@ -4,7 +4,22 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="black">#222020</color>
-    <color name="white">#C8C0C0</color>
+    <color name="blackshadow">#595656</color>
+
+    <color name="white">#F6EDED</color>
+
     <color name="yellow">#FAF30E</color>
+
+    <color name="bluecard">#05346B</color>
+    <color name="blueshadow">#021933</color>
+    <color name="bluelight">#4792E6</color>
+
+    <color name="yellowcard">#FAF30E</color>
+    <color name="yellowshadow">#777306</color>
+    <color name="yellowlight">#EDECC0</color>
+
+    <color name="redcard">#D7386A</color>
+    <color name="redshadow">#670524</color>
+    <color name="redlight">#ED85A6</color>
 
 </resources>

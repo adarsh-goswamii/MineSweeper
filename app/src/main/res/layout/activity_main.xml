@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <TextView
@@ -34,6 +35,7 @@
             android:layout_height="70dp"
             android:src="@drawable/github"
             android:scaleType="fitXY"
+            app:neumorph_shadowColorDark="@color/blackshadow"
             android:id="@+id/image_github"
             />
 
@@ -45,6 +47,7 @@
             android:src="@drawable/gmail"
             android:scaleType="fitXY"
             android:id="@+id/image_gmail"
+            app:neumorph_shadowColorDark="@color/blackshadow"
             />
 
         <soup.neumorphism.NeumorphImageButton
@@ -55,11 +58,10 @@
             android:src="@drawable/linkedin"
             android:scaleType="fitXY"
             android:id="@+id/image_linkedin"
+            app:neumorph_shadowColorDark="@color/blackshadow"
             />
 
     </LinearLayout>
-
-
 
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
@@ -68,13 +70,14 @@
         android:layout_marginLeft="10dp"
         android:id="@+id/card_easy"
         android:layout_marginRight="10dp"
-        android:background="@color/yellow"
+        android:background="@color/yellowcard"
         android:layout_below="@+id/relative_image_buttons"
+        app:neumorph_shadowColorDark="@color/blackshadow"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="#05346B"
+            android:background="@color/bluecard"
             android:layout_height="match_parent">
         <ImageView
             android:layout_width="200dp"
@@ -125,7 +128,9 @@
                 android:text="PLAY"
                 android:textColor="#ffffff"
                 android:fontFamily="@font/butcherman"
+                app:neumorph_shadowColorDark="@color/blueshadow"
                 android:layout_toRightOf="@id/card_image_easy"
+                app:neumorph_shadowColorLight="@color/bluelight"
                 />
 
         </RelativeLayout>
@@ -142,6 +147,7 @@
         android:id="@+id/card_medium"
         android:layout_below="@+id/card_easy"
         android:layout_marginTop="5dp"
+        app:neumorph_shadowColorDark="@color/blackshadow"
         >
 
         <RelativeLayout
@@ -196,7 +202,9 @@
                 android:layout_below="@id/text_medium_loss"
                 android:text="PLAY"
                 android:fontFamily="@font/butcherman"
+                app:neumorph_shadowColorDark="@color/yellowshadow"
                 android:layout_toRightOf="@id/card_image_medium"
+                app:neumorph_shadowColorLight="@color/yellowlight"
                 />
 
         </RelativeLayout>
@@ -213,11 +221,12 @@
         android:layout_marginTop="5dp"
         android:id="@+id/card_hard"
         android:layout_below="@+id/card_medium"
+        app:neumorph_shadowColorDark="@color/blackshadow"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="#D7386A"
+            android:background="@color/redcard"
             android:layout_height="match_parent">
             <ImageView
                 android:layout_width="200dp"
@@ -268,6 +277,8 @@
                 android:text="PLAY"
                 android:fontFamily="@font/butcherman"
                 android:layout_toRightOf="@id/card_image_hard"
+                app:neumorph_shadowColorDark="@color/redshadow"
+                app:neumorph_shadowColorLight="@color/redlight"
                 />
 
         </RelativeLayout>
