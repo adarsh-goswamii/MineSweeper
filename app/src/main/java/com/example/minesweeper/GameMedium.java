@@ -2,7 +2,6 @@ package com.example.minesweeper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,10 +14,7 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class Game extends AppCompatActivity {
+public class GameMedium extends AppCompatActivity {
 
     private TableLayout table;
     private int lives;
@@ -34,7 +30,8 @@ public class Game extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_game_medium);
+
         table= findViewById(R.id.table);
         relTable= findViewById(R.id.relative_table);
         emoji= findViewById(R.id.emoji);
@@ -79,10 +76,10 @@ public class Game extends AppCompatActivity {
     {
         result.setVisibility(View.GONE);
         relTable.setVisibility(View.VISIBLE);
-        arr= new char[8][8];
+        arr= new char[10][10];
         lives= 3;
         won= false;
-        GameManager.buildGame(arr, 6, 8);
+        GameManager.buildGame(arr, 8, 10);
         makeChanges(arr);
     }
 
@@ -155,8 +152,8 @@ public class Game extends AppCompatActivity {
             relTable.setVisibility(View.GONE);
             result_animation.setAnimation(R.raw.loose);
             result_text.setText("YOU LOOSE!");
-            MainActivity.eloss++;
-            MainActivity.easyloss.setText(MainActivity.eloss+" LOSS");
+            MainActivity.mloss++;
+            MainActivity.mediumloss.setText(MainActivity.mloss+" LOSS");
         }
 
         if(won)
@@ -165,10 +162,8 @@ public class Game extends AppCompatActivity {
             relTable.setVisibility(View.GONE);
             result_animation.setAnimation(R.raw.win);
             result_text.setText("YOU WON!");
-            MainActivity.ewin++;
-            MainActivity.easywin.setText(MainActivity.ewin+" WINS");
+            MainActivity.mwin++;
+            MainActivity.mediumwin.setText(MainActivity.mwin+" WINS");
         }
     }
-
-
 }

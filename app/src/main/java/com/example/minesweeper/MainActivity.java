@@ -14,12 +14,13 @@ public class MainActivity extends AppCompatActivity {
 
     private NeumorphImageButton mail, github, linkedin;
     private NeumorphButton easy, medium, hard;
-    private TextView easywin, easyloss, mediumwin, mediumloss, hardwin, hardloss;
+    public static TextView easywin, easyloss, mediumwin, mediumloss, hardwin, hardloss;
+    public static int ewin, eloss, mwin, mloss, hwin, hloss;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ewin= 0; eloss= 0;mwin= 0; mloss= 0; hwin= 0; hloss= 0;
         initViews();
 
         mail.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        medium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this, GameMedium.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -69,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         easywin= findViewById(R.id.text_easy_win);
         easyloss= findViewById(R.id.text_easy_loss);
-        mediumwin= findViewById(R.id.text_medium_loss);
-        mediumloss= findViewById(R.id.text_medium_win);
+        mediumwin= findViewById(R.id.text_medium_win);
+        mediumloss= findViewById(R.id.text_medium_loss);
         hardwin= findViewById(R.id.text_hard_win);
         hardloss= findViewById(R.id.text_hard_loss);
     }

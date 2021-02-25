@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/bluecard"
     android:layout_height="match_parent"
     tools:context=".Game">
 
@@ -12,7 +11,7 @@
         style="@style/ShapeAppearance.Neumorph.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:neumorph_shadowColorLight="@color/bluelight"
+        app:neumorph_backgroundColor="@color/bluecard"
         app:neumorph_shadowColorDark="@color/blackshadow"
         android:id="@+id/relative_level"
         >
@@ -29,20 +28,26 @@
             android:layout_centerHorizontal="true"
             android:textSize="28sp"
             android:fontFamily="@font/butcherman"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             />
 
     </RelativeLayout>
     </soup.neumorphism.NeumorphCardView>
 
     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/relative_level"
+        >
+    <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/relative_table"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="100dp"
-            android:layout_below="@+id/relative_level"
+            android:visibility="gone"
             >
 
             <TableLayout
@@ -448,9 +453,38 @@
         </RelativeLayout>
 
     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lottie_rawRes="@raw/loose"
+            app:lottie_autoPlay="true"
+            android:id="@+id/lottie_result"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOU LOOSE!"
+            android:layout_below="@+id/lottie_result"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/butcherman"
+            android:textColor="@color/black"
+            android:id="@+id/text_loose_win"
+            />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_below="@+id/relative_table"
+        android:layout_below="@+id/container"
         android:layout_marginTop="10dp"
         >
 
@@ -458,9 +492,9 @@
             style="@style/Widget.Neumorph.ImageButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_restart"
-            app:neumorph_shadowColorLight="@color/bluelight"
+            android:src="@drawable/ic_reset"
             app:neumorph_shadowColorDark="@color/blackshadow"
+            app:neumorph_backgroundColor="@color/bluecard"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
             android:id="@+id/btn_restart"

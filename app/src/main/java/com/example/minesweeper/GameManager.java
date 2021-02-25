@@ -11,7 +11,7 @@ import java.util.Queue;
 public class GameManager
 {
     private static char[] choose={'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'M', 'M'};
-    public static void buildGame(char[][] arr, int minMines)
+    public static void buildGame(char[][] arr, int minMines, int maxMines)
     {
         int countMines= 0;
         for(int i=0;i<arr.length;i++)
@@ -22,16 +22,18 @@ public class GameManager
                     countMines++;
             }
 
-        if(countMines<minMines)
-            buildGame(arr, minMines);
+        if(countMines<minMines || countMines>maxMines)
+            buildGame(arr, minMines, maxMines);
     }
 
-    public static void onClick(char[][] board, int[] click)
+    public static int onClick(char[][] board, int[] click, int lives)
     {
+        if(board[click[0]][click[1]]!= 'E' && board[click[0]][click[1]]!= 'M' ) return lives;
         if(board[click[0]][click[1]]=='M')
         {
             board[click[0]][click[1]]= 'X';
-            return;
+            lives--;
+            return lives;
         }
 
         boolean[][] visited=new boolean[board.length][board[0].length];
@@ -74,22 +76,12 @@ public class GameManager
             }
         }
 
+        Game.won= true;
         for(int i=0;i<board.length;i++)
-        {
-            for(int j= 0;j<board[0].length;j++)
-            {
-                if(board[i][j]== 'M')
-                {
-                    int count= 0;
-                    for(int row= Math.max(0, i-1);row<=Math.min(board.length-1, i+1);row++)
-                        for(int col= Math.max(0, j-1);col<= Math.min(board[0].length-1, j+1); col++)
-                            if(board[row][col]== 'E' || board[row][col]== 'M')
-                                count++;
+            for(int j=0;j<board[0].length;j++)
+                if(board[i][j]== 'E')
+                    Game.won= false;
 
-                    if(count==1)
-                        board[i][j]= 'Z';
-                }
-            }
-        }
+        return lives;
     }
 }
