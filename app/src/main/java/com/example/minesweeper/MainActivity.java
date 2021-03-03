@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        hard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this, GameHard.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -83,6 +91,4 @@ public class MainActivity extends AppCompatActivity {
         hardwin= findViewById(R.id.text_hard_win);
         hardloss= findViewById(R.id.text_hard_loss);
     }
-
-
 }

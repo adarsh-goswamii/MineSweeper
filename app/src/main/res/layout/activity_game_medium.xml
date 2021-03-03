@@ -706,7 +706,7 @@
             style="@style/Widget.Neumorph.ImageButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_reset"
+            android:src="@drawable/ic_reset_black"
             app:neumorph_shadowColorDark="@color/yellowshadow"
             app:neumorph_backgroundColor="@color/yellowcard"
             android:layout_alignParentEnd="true"

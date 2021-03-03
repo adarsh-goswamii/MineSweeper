@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class GameMedium extends AppCompatActivity {
+public class GameHard extends AppCompatActivity {
 
     private TableLayout table;
     private int lives;
@@ -30,7 +30,7 @@ public class GameMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_medium);
+        setContentView(R.layout.activity_game_hard);
 
         table= findViewById(R.id.table);
         relTable= findViewById(R.id.relative_table);
@@ -76,10 +76,10 @@ public class GameMedium extends AppCompatActivity {
     {
         result.setVisibility(View.GONE);
         relTable.setVisibility(View.VISIBLE);
-        arr= new char[10][10];
-        lives= 5;
+        arr= new char[12][12];
+        lives= 7;
         won= false;
-        GameManager.buildGame(arr, 8, 10);
+        GameManager.buildGame(arr, 10, 12);
         makeChanges(arr);
     }
 
@@ -130,7 +130,7 @@ public class GameMedium extends AppCompatActivity {
             }
         }
 
-        if(lives>=3)
+        if(lives>= 3)
         {
             lives_remaining.setText(""+lives);
             emoji.setImageResource(R.drawable.lives1);
@@ -152,8 +152,8 @@ public class GameMedium extends AppCompatActivity {
             relTable.setVisibility(View.GONE);
             result_animation.setAnimation(R.raw.loose);
             result_text.setText("YOU LOOSE!");
-            MainActivity.mloss++;
-            MainActivity.mediumloss.setText(MainActivity.mloss+" LOSS");
+            MainActivity.hloss++;
+            MainActivity.hardloss.setText(MainActivity.hloss+" LOSS");
         }
 
         if(won)
@@ -162,8 +162,8 @@ public class GameMedium extends AppCompatActivity {
             relTable.setVisibility(View.GONE);
             result_animation.setAnimation(R.raw.win);
             result_text.setText("YOU WON!");
-            MainActivity.mwin++;
-            MainActivity.mediumwin.setText(MainActivity.mwin+" WINS");
+            MainActivity.hwin++;
+            MainActivity.hardwin.setText(MainActivity.hwin+" WINS");
         }
     }
 }
