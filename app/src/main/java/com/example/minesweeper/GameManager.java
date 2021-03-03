@@ -76,11 +76,23 @@ public class GameManager
             }
         }
 
-        Game.won= true;
+        if(board.length== 12)
+            GameHard.won= true;
+        else if(board.length== 10)
+            GameMedium.won= true;
+        else
+            Game.won= true;
         for(int i=0;i<board.length;i++)
             for(int j=0;j<board[0].length;j++)
                 if(board[i][j]== 'E')
-                    Game.won= false;
+                {
+                    if(board.length== 12)
+                        GameHard.won= false;
+                    else if(board.length== 10)
+                        GameMedium.won= false;
+                    else
+                        Game.won= false;
+                }
 
         return lives;
     }
